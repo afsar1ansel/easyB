@@ -224,7 +224,7 @@ class SettingsState extends State<Settings> {
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    'Passwort erneut eingeben',
+                    'Passwort wiederholen',
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w500

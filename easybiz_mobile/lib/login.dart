@@ -91,7 +91,7 @@ class LoginState extends State<Login> {
                 child: Padding(
                   padding: EdgeInsets.only(top: 20),
                   child: Text(
-                    'Konto anmelden',
+                    'anmelden',
                     style: TextStyle(
                       color: Color(0xFF333333),
                       fontSize: 36,

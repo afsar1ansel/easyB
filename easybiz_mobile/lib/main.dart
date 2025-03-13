@@ -227,7 +227,7 @@ class Walkthrough extends StatelessWidget {
           );
         },
         showNextButton: false,
-        done: const Text("Login"),
+        done: const Text("Anmelden"),
         showSkipButton: false);
   }
 }

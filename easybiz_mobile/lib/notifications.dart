@@ -103,7 +103,7 @@ class NotificationsState extends State<Notifications> {
                                   height: 5,
                                 ),
                                 Text(
-                                  'Datum: 29-02-2024 | Time: 15:30 hrs ',
+                                  'Datum: 29-02-2024 | Uhrzeit: 15:30 Uhr ',
                                   style: TextStyle(
                                     color: Color(0xFF5E5E5E),
                                     fontSize: 12,
