@@ -166,6 +166,7 @@ class ServicesState extends State<Services> {
                                 ClipRRect(
                                   borderRadius: BorderRadius.circular(8.0),
                                   child: CachedNetworkImage(
+                                    height: 200, //can be removed or changed
                                     imageUrl: '$baseurl/service-groups/'+serviceGroupDataList[index]['image_path'],
                                       progressIndicatorBuilder: (context, url, downloadProgress) =>
                                           CircularProgressIndicator(value: downloadProgress.progress),
