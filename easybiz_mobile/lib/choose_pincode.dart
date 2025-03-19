@@ -49,6 +49,13 @@ class PincodeState extends State<Pincode> {
 
       if (response.statusCode == 200) {
         print(response.body);
+
+         final Map<String, dynamic> responseData = json.decode(response.body);
+        List<String> nearestPincodes = List<String>.from(responseData['nearest_pincodes'] ?? []);
+        
+          await storage.write(
+            key: 'nearest_pincodes', value: json.encode(nearestPincodes));
+
         if (mounted) {
           Navigator.push(
             context,

@@ -20,6 +20,8 @@ late TextEditingController serviceController;
 List<String> options = [];
 List serviceDataList = [];
 
+
+
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -32,6 +34,17 @@ class HomeState extends State<Home> {
   String showPincode = 'Ort wählen \u25BC';
   GlobalKey<CurvedNavigationBarState> bottomNavigationKey = GlobalKey();
   final FlutterSecureStorage storage = const FlutterSecureStorage();
+ String name = 'User';
+  
+  Future<void> fetchUserData() async {
+    // Retrieve the username from FlutterSecureStorage
+    final storedUsername = await storage.read(key: 'username');
+
+    setState(() {
+      name = storedUsername ??
+          'User';
+    });
+  }
 
   Future<void> readPincodeData() async {
     await Future.delayed(const Duration(seconds: 1));
@@ -53,11 +66,14 @@ class HomeState extends State<Home> {
     // TODO: implement initState
     readPincodeData();
     getServicesData();
+    fetchUserData();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+
+
     return Scaffold(
       backgroundColor: const Color(0xFFF9F9F9),
       bottomNavigationBar: CurvedNavigationBar(
@@ -161,12 +177,12 @@ class HomeState extends State<Home> {
             padding: EdgeInsets.only(top: 20, left: 15, right: 15),
             child: ServicesSearchAutoComplete(),
           ),
-          const Padding(
+           Padding(
             padding: EdgeInsets.only(top: 20, left: 15, right: 15),
             child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'HALLO ROHAN 👋',
+                  'Hallo $name 👋',
                   style: TextStyle(
                     color: Color(0xFF887E5B),
                     fontSize: 20,
@@ -288,6 +304,7 @@ class HomeState extends State<Home> {
     return serviceDataList.length;
   }
 }
+
 
 class ServicesSearchAutoComplete extends StatefulWidget {
   const ServicesSearchAutoComplete({super.key});

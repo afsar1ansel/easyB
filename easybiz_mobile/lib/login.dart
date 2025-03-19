@@ -376,6 +376,11 @@ class LoginState extends State<Login> {
     );
 
     print(response.body);
+    final responseData = jsonDecode(response.body);
+    final username = responseData['username']; 
+
+    await storage.write(key: 'username', value: username);
+    print(username);
 
     if (response.statusCode == 200) {
       var resData = SigninResponse.fromJson(
