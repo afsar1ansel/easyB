@@ -166,7 +166,7 @@ class HomeState extends State<Home> {
             child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'HELLO ROHAN 👋',
+                  'HALLO ROHAN 👋',
                   style: TextStyle(
                     color: Color(0xFF887E5B),
                     fontSize: 20,
