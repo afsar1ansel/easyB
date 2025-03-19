@@ -381,20 +381,18 @@ class VendorsPackagesState extends State<Vendors> {
     String? sessionId = await storage.read(key: 'userSession');
     String? pincode = await storage.read(key: 'pincode');
     String? numbersOnly = pincode?.replaceAll(RegExp(r'\D'), ''); 
-    String? subserviceNameFS = await storage.read(key: 'subserviceNameFS');
-    String? nearPincodes = await storage.read(key: 'nearest_pincodes');
 
+    String? subserviceNameFS = await storage.read(key: 'subServiceName');
+    String? nearPincodes = await storage.read(key: 'nearest_pincodes');
       List<String> pincodeList = List<String>.from(jsonDecode(nearPincodes!));
       String formattedPincodes = pincodeList.join('|');
 
-    
-
-    print("*******");
-    print(sessionId);
-    print(numbersOnly);
-    print(nearPincodes);
-      print(formattedPincodes);
-    print("***pincode and sessionId**");
+    // print("*******");
+    // print(sessionId);
+    // print(numbersOnly);
+    // print(nearPincodes);
+    //   print(formattedPincodes);
+    // print("***pincode and sessionId**");
 
     // if (pincode != null) {
     //   pincodeData = pincode.split(' - ');
@@ -408,6 +406,8 @@ class VendorsPackagesState extends State<Vendors> {
 
     print("Vendor Details +++++++");
     print(response.body);
+    Map<String, String> allValues = await storage.readAll();
+    print(allValues);
     print("Vendor Details +++++++");
 
     var vendorDataJson = jsonDecode(response.body);

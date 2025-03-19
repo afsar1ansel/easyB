@@ -501,6 +501,9 @@ class ServicesPackagesState extends State<ServicesPackages> {
     final response = await http
         .get(Uri.parse('$baseurl/home/services/get-details/$serviceIdSp'));
 
+    //  print("_____+++++++++___serviceGroup___");
+    // print(response.body);
+
     var servicePackageDataJson = jsonDecode(response.body);
 
     setState(() {
