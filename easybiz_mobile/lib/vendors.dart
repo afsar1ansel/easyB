@@ -380,20 +380,31 @@ class VendorsPackagesState extends State<Vendors> {
   _getVendorDetails() async {
     String? sessionId = await storage.read(key: 'userSession');
     String? pincode = await storage.read(key: 'pincode');
-    String? subserviceNameFS = await storage.read(key: 'subServiceName');
+    String? numbersOnly = pincode?.replaceAll(RegExp(r'\D'), ''); 
+    String? subserviceNameFS = await storage.read(key: 'subserviceNameFS');
+    String? nearPincodes = await storage.read(key: 'nearest_pincodes');
+
+      List<String> pincodeList = List<String>.from(jsonDecode(nearPincodes!));
+      String formattedPincodes = pincodeList.join('|');
+
+    
 
     print("*******");
     print(sessionId);
+    print(numbersOnly);
+    print(nearPincodes);
+      print(formattedPincodes);
+    print("***pincode and sessionId**");
 
-    if (pincode != null) {
-      pincodeData = pincode.split(' - ');
-      pincodeNumber = pincodeData[0];
-    } else {
-      pincodeNumber = '';
-    }
+    // if (pincode != null) {
+    //   pincodeData = pincode.split(' - ');
+    //   pincodeNumber = pincodeData[0];
+    // } else {
+    //   pincodeNumber = '';
+    // }
 
     final response = await http.get(
-        Uri.parse('$baseurl/home/services/vendors/$sessionId/$pincodeNumber'));
+        Uri.parse('$baseurl/home/services/vendors/$sessionId/$numbersOnly|$formattedPincodes/163'));
 
     print("Vendor Details +++++++");
     print(response.body);

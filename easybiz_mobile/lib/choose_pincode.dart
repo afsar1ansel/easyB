@@ -52,7 +52,7 @@ class PincodeState extends State<Pincode> {
 
          final Map<String, dynamic> responseData = json.decode(response.body);
         List<String> nearestPincodes = List<String>.from(responseData['nearest_pincodes'] ?? []);
-        
+
           await storage.write(
             key: 'nearest_pincodes', value: json.encode(nearestPincodes));
 
@@ -223,6 +223,14 @@ class PincodeAutoCompleteState extends State<PincodeAutoComplete> {
       },
       onSelected: (String selection) async {
         widget.onPincodeSelected(selection);
+         print("Selected Pincode: $selection");
+
+        // Store the selected pincode immediately
+        await storage.write(key: 'pincode', value: selection);
+
+        // Read and print stored value
+        String data = (await storage.read(key: 'pincode')) ?? '';
+        print("Stored Pincode: $data");
       },
       fieldViewBuilder:
           (BuildContext context, controller, focusNode, onFieldSubmitted) {
