@@ -531,7 +531,12 @@ class ServicesPackagesState extends State<ServicesPackages> {
     final response = await http
         .get(Uri.parse('$baseurl/home/services/details/$serviceGroupId'));
 
+    // print("_____+++++++++___maybe subservice___");
+    // print(response.body);
+    // await storage.write(key: "subServiceId", value: response.body);
+
     var serviceDetailsDataJson = jsonDecode(response.body);
+
 
     setState(() {
       subServiceGroupDataList.clear();
@@ -559,6 +564,7 @@ class ServicesPackagesState extends State<ServicesPackages> {
       }
     }
 
+
     final map = <String, dynamic>{};
     map['quant[]'] = '1';
     map['selected[]'] = subServiceId.toString();
@@ -571,10 +577,12 @@ class ServicesPackagesState extends State<ServicesPackages> {
 
     var responseData = jsonDecode(response.body);
 
-    print(responseData['userSession']);
+    // print(response.body);
+    // print(responseData['userSession']);
 
     await storage.write(key: 'userSession', value: responseData['userSession']);
     await storage.write(key: 'subServiceName', value: subServiceName);
+    await storage.write(key: 'subServiceId', value: subServiceId.toString());
 
     if (context.mounted) {
       Navigator.push(
