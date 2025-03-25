@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -51,20 +48,31 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDeMXFL7Rpc8QYT631siSCqN7xTlWai4-s',
-    appId: '1:957185824155:android:488224299495f266e73d3e',
+    appId: '1:957185824155:android:b37473c500993354e73d3e',
     messagingSenderId: '957185824155',
     projectId: 'easybizz-mobile',
-    storageBucket: 'easybizz-mobile.appspot.com',
+    storageBucket: 'easybizz-mobile.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyCRKGCqrbYPFV8WCmfkd3Civ_h7myhLftg',
-    appId: '1:957185824155:ios:b0acd0adb8a63ab3e73d3e',
+    appId: '1:957185824155:ios:e1dd916f6ddfaea6e73d3e',
     messagingSenderId: '957185824155',
     projectId: 'easybizz-mobile',
-    storageBucket: 'easybizz-mobile.appspot.com',
+    storageBucket: 'easybizz-mobile.firebasestorage.app',
     androidClientId: '957185824155-n8dhl1oq5q5nhoqlc4jqk4ms70mbka8k.apps.googleusercontent.com',
-    iosClientId: '957185824155-e4sfv4o7ccis06apaj78ep56i4e0lmeg.apps.googleusercontent.com',
-    iosBundleId: 'com.easybizapp.easybizMobile',
+    iosClientId: '957185824155-tv8q36mifua5viagnu9a7th7ecfq786f.apps.googleusercontent.com',
+    iosBundleId: 'com.example.easybizMobile',
   );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyBWPtuT5ug2ShUHSdOt81Qs0Po9Rf1n2Os',
+    appId: '1:957185824155:web:523caa9efb6ea67ce73d3e',
+    messagingSenderId: '957185824155',
+    projectId: 'easybizz-mobile',
+    authDomain: 'easybizz-mobile.firebaseapp.com',
+    storageBucket: 'easybizz-mobile.firebasestorage.app',
+    measurementId: 'G-EKPHSCHRFJ',
+  );
+
 }

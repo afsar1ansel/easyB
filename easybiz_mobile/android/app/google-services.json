@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "957185824155",
+    "project_id": "easybizz-mobile",
+    "storage_bucket": "easybizz-mobile.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957185824155:android:488224299495f266e73d3e",
+        "android_client_info": {
+          "package_name": "com.easybiz_app.easybiz_mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "957185824155-n8dhl1oq5q5nhoqlc4jqk4ms70mbka8k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.easybiz_app.easybiz_mobile",
+            "certificate_hash": "5ce694d5f6f5c67a62538c01d330bf96d98d9e2a"
+          }
+        },
+        {
+          "client_id": "957185824155-2cm0pno77c1j7ef3ms69ngqtjrcl4fij.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeMXFL7Rpc8QYT631siSCqN7xTlWai4-s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "957185824155-2cm0pno77c1j7ef3ms69ngqtjrcl4fij.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "957185824155-e4sfv4o7ccis06apaj78ep56i4e0lmeg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.easybizapp.easybizMobile"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957185824155:android:b37473c500993354e73d3e",
+        "android_client_info": {
+          "package_name": "com.example.easybiz_mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "957185824155-2cm0pno77c1j7ef3ms69ngqtjrcl4fij.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeMXFL7Rpc8QYT631siSCqN7xTlWai4-s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "957185824155-2cm0pno77c1j7ef3ms69ngqtjrcl4fij.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "957185824155-e4sfv4o7ccis06apaj78ep56i4e0lmeg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.easybizapp.easybizMobile"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
